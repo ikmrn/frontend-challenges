@@ -34,7 +34,7 @@ body {
   justify-content: center;
   align-items: center;
   /* Set font family and background color */
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   background-color: var(--light-gray);
   height: 100vh;
   padding: 30px;
@@ -45,14 +45,16 @@ p {
   font-weight: 400;
   color: var(--grayish-blue);
   text-align: center;
+  letter-spacing: 0.25px;
+
 }
 
-h2 {
-  font-size: 20px;
+h1 {
+  font-size: 22px;
   font-weight: 700;
   color: var(--dark-blue);
-  margin: 20px 0 10px;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 /* Card Styles */
@@ -60,34 +62,19 @@ h2 {
   /* Set card layout */
   display: flex;
   flex-direction: column;
+  width: 320px;
+  height: 500px;
   /* Set background color, padding, border radius, maximum width, and box shadow */
   background-color: var(--white);
-  padding: 20px;
-  border-radius: 20px;
+  padding: 16px;
+  border-radius: 15px;
   max-width: 300px;
   box-shadow: 3px 3px 7px 3px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
+  width: 288px;
+  height: 288px;
   border-radius: 10px;
+  margin-bottom: 24px;
 }
-
-.attribution {
-  position: absolute;
-  bottom: 0;
-  margin: 15px;
-  text-align: center;
-}
-
-/* Links */
-a:any-link {
-  text-decoration: none;
-  color: var(--dark-blue);
-  font-weight: 700;
-}
-
-a:hover,
-a:focus {
-  border-bottom: solid 1px var(--dark-blue);
-}
-
