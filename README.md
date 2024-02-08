@@ -5,8 +5,8 @@ Welcome to my repository for Frontend Mentor challenges! Here you'll find my sol
 ## Projects
 
 1. [Challenge 1: QR code component](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H)
-   - [Solution](link)
-   - [Live Demo](link)
+   - [Solution](https://github.com/ikmrn/frontend-challenges/tree/qr-code)
+   - [Live Demo](https://ikmrn-qr.netlify.app/)
 
 ## About Frontend Mentor
 
