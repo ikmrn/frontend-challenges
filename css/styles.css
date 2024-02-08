@@ -56,3 +56,37 @@ h2 {
   font-weight: 700;
 }
 
+/* Card Styles */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 350px;
+  box-shadow: 3px 3px 7px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  border-radius: 10px;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  margin: 15px;
+  text-align: center;
+}
+
+/* Links */
+a:any-link {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+
+a:hover,
+a:focus {
+  border-bottom: solid 1px var(--dark-blue);
+}
