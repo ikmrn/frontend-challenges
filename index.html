@@ -1,37 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/index.js"></script>
+  <title>Rock, Paper, Scissors</title>
 
-  Score
-  Rules
 
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <header class="header" aria-hidden="false">
+    <picture class="header__logo">
+      <img src="images/logo.svg" alt="Game logo">
+    </picture>
+    <div class="header__score-card">
+      <span class="header__score-text">SCORE</span>
+      <span class="header__score" id="score">12</span>
+    </div>
+  </header>
 
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main class="game">
+    <div class="game__triagle">
+      <picture>
+        <img src="images/bg-triangle.svg" alt="">
+      </picture>
+    </div>
+    <div class="game__paper circle-paper">
+      <picture>
+        <img src="images/icon-paper.svg" alt="">
+      </picture>
+    </div>
+    <div class="game__scissors circle-scissors">
+      <div class="circle"></div>
+      <picture>
+        <img src="images/icon-scissors.svg" alt="">
+      </picture>
+
+    </div>
+    <div class="game__rock circle-rock">
+      <picture>
+        <img src="images/icon-rock.svg" alt="">
+      </picture>
+      
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <button class="footer__rules-btn">RULES</button>
+  </footer>
+
+  <!-- Modal rules -->
+  <section class="modal" aria-hidden="true">
+    <div class="modal__container">
+      <div class="modal__header">
+        <span class="modal__text">RULES</span>
+        <img class="modal__icon" src="images/icon-close.svg" alt="close icon">
+      </div>
+      <picture class="modal__image">
+        <img src="images/image-rules.svg" alt="Image rules">
+      </picture>
+    </div>
+  </section>
+
 </body>
+
 </html>
