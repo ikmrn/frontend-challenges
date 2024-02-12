@@ -80,11 +80,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const rulesBtn = document.querySelector(".footer__rules-btn");
   const modal = document.querySelector(".modal");
   const modalCloseIcon = document.querySelector(".modal__icon");
+  const paperBtn = document.querySelector(".game__btn-paper");
+  const scissorsBtn = document.querySelector(".game__btn-scissors");
+  const button = document.querySelector(".game__btn");
 
+  /* Modal Rules event listeners */
   rulesBtn.addEventListener("click", () => {
     modal.setAttribute("aria-hidden", "false");
   });
-  modalCloseIcon.addEventListener("click", ()=> {
-    modal.setAttribute("aria-hidden", "true")
-  })
+
+  modalCloseIcon.addEventListener("click", () => {
+    modal.setAttribute("aria-hidden", "true");
+  });
+
+
+  /* Options event listeners */
+
+  button.addEventListener("click", () => {
+    button.classList.add("clicked"), "mousedown";
+  });
+
+  document.addEventListener("mouseup", () => {
+    button.classList.remove("clicked");
+  });
+
+  const playerChoice = 1;
+
+  const computerChoice = math.floor(Math.random() * 3);
+  // function getComputerChoice() {
+//   return Math.floor(Math.random() * 3);
+// }
+  function roundResults(playerChoice, computerChoice){
+
+  }
+
+
 });
