@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/rock-paper-scissors.png">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/index.js"></script>
   <title>Rock, Paper, Scissors</title>
@@ -25,29 +25,30 @@
 
 
   <main class="game">
-    <div class="game__triagle">
-      <picture>
-        <img src="images/bg-triangle.svg" alt="">
-      </picture>
-    </div>
-    <div class="game__paper circle-paper">
-      <picture>
-        <img src="images/icon-paper.svg" alt="">
-      </picture>
-    </div>
-    <div class="game__scissors circle-scissors">
-      <div class="circle"></div>
-      <picture>
-        <img src="images/icon-scissors.svg" alt="">
-      </picture>
+    <ul class="game__options">
+      <li class="game__item">
+        <button class="game__btn game__btn-paper">
+          <div class="game__image-container">
+            <img class="game__image" src="images/icon-paper.svg" alt="">
+          </div>
+        </button>
+      </li>
 
-    </div>
-    <div class="game__rock circle-rock">
-      <picture>
-        <img src="images/icon-rock.svg" alt="">
-      </picture>
-      
-    </div>
+      <li class="game__item">
+        <button class="game__btn game__btn-scissors">
+          <div class="game__image-container">
+            <img class="game__image" src="images/icon-scissors.svg" alt="">
+          </div>
+        </button>
+      </li>
+      <li class="game__item game__li-rock">
+        <button class="game__btn game__btn-rock">
+          <div class="game__image-container">
+            <img class="game__image" src="images/icon-rock.svg" alt="">
+          </div>
+        </button>
+      </li>
+    </ul>
   </main>
 
 
