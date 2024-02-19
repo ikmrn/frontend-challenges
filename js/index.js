@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Select Result elements */
   /* General elements */
-  const Result = document.querySelector(".result");
+  const result = document.querySelector(".result");
   const playAgainBtn = document.querySelector(".result__play-btn");
-  const playAgainLi = document.querySelector(".result__play");
+  const playAgain = document.querySelector(".result__play");
   const resultOutcome = document.querySelector(".result__outcome");
   const scoreElement = document.getElementById("score");
   /* Player elements */
@@ -22,21 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Computer elements */
   const resultComputerBtn = document.getElementById("result__btn-computer");
   const resultComputerImg = document.getElementById("result__img-computer");
-  const resultComputerLi = document.getElementById("result__li-computer");
+  const resultComputerImgContainer = document.getElementById(
+    "result__computer-image-container"
+  );
 
   /* Variables */
   let countScore = 0;
   let playerChoice;
   let computerChoice;
 
-  resultComputerBtn.classList.add(".game__btn-blinking");
+  // resultComputerBtn.classList.add(".game__btn-blinking");
 
   /* Game options event listeners */
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       /* Hide .game and show .result */
       game.setAttribute("aria-hidden", true);
-      Result.setAttribute("aria-hidden", false);
+      result.setAttribute("aria-hidden", false);
 
       /* Get result of the round */
       playerChoice = validOptions.indexOf(button.id);
@@ -44,35 +46,61 @@ document.addEventListener("DOMContentLoaded", () => {
       roundResult = playRound(playerChoice, computerChoice);
       countScore += roundResult.score;
 
+      /* Add classes to display player choice */
       resultPlayerBtn.classList.add(`game__btn-${validOptions[playerChoice]}`);
       resultPlayerImg.src = `images/icon-${validOptions[playerChoice]}.svg`;
-      resultComputerLi.classList.add("result__li-blinking");
 
-      sleep(200).then(() => {
-        resultComputerLi.setAttribute("aria-hidden", false);
-        playAgainLi.setAttribute("aria-hidden", false);
-        resultComputerLi.classList.remove("result__li-blinking");
+      /* Add classes to display computer choice */
+      resultComputerBtn.classList.add("result__blinking");
+      resultComputerBtn.classList.remove("result__btn");
+      resultComputerImgContainer.setAttribute("aria-hidden", true);
+      /* Show computer choice and game results after 2 seconds */
+      sleep(2000).then(() => {
+        /* Show play again and result of the round */
+        playAgain.setAttribute("aria-hidden", false);
+
+        /* Style computer choice */
+        resultComputerBtn.classList.remove("result__blinking");
+        resultComputerImgContainer.setAttribute("aria-hidden", false);
+
         resultComputerImg.src = `images/icon-${validOptions[computerChoice]}.svg`;
+        resultComputerBtn.classList.add("result__btn");
         resultComputerBtn.classList.add(
           `game__btn-${validOptions[computerChoice]}`
         );
+
+        /* Render outcome to html */
         resultOutcome.innerHTML = roundResult.outcome;
         scoreElement.innerHTML = countScore;
+        /* Add winner ripple effect */
+        if (roundResult.score === 1){
+          resultPlayerBtn.classList.add("result__btn-win")
+        }
+        else if (roundResult.score === -1) {
+          resultComputerBtn.classList.add("result__btn-win")
+        }
+
       });
     });
   });
 
   /* Play again button event listeners */
   playAgainBtn.addEventListener("click", () => {
+    /*  Hide .result and show .game */
     game.setAttribute("aria-hidden", false);
-    playAgainLi.setAttribute("aria-hidden", true);
-    Result.setAttribute("aria-hidden", true);
-    resultComputerLi.setAttribute("aria-hidden", true);
+    result.setAttribute("aria-hidden", true);
+
+    playAgain.setAttribute("aria-hidden", true);
+
+    /* Remove classes for player and computer choices */
     resultPlayerBtn.classList.remove(`game__btn-${validOptions[playerChoice]}`);
     resultComputerBtn.classList.remove(
       `game__btn-${validOptions[computerChoice]}`
     );
     resultComputerImg.src = "";
+    resultComputerBtn.classList.remove("result__btn-win")
+    resultPlayerBtn.classList.remove("result__btn-win")
+
   });
 
   /* Button mouseup mousedown event listeners */
