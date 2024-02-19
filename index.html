@@ -19,30 +19,30 @@
     </picture>
     <div class="header__score-card">
       <span class="header__score-text">SCORE</span>
-      <span class="header__score" id="score">12</span>
+      <span class="header__score" id="score">0</span>
     </div>
   </header>
 
 
-  <main class="game">
+  <main class="game" aria-hidden="false">
     <ul class="game__options">
       <li class="game__item">
-        <button class="game__btn game__btn-paper">
-          <div class="game__image-container">
+        <button class="game__btn game__btn-paper" id="paper">
+          <div class="game__image-container" id="scissors">
             <img class="game__image" src="images/icon-paper.svg" alt="">
           </div>
         </button>
       </li>
 
       <li class="game__item">
-        <button class="game__btn game__btn-scissors">
+        <button class="game__btn game__btn-scissors" id="scissors">
           <div class="game__image-container">
             <img class="game__image" src="images/icon-scissors.svg" alt="">
           </div>
         </button>
       </li>
       <li class="game__item game__li-rock">
-        <button class="game__btn game__btn-rock">
+        <button class="game__btn game__btn-rock" id="rock">
           <div class="game__image-container">
             <img class="game__image" src="images/icon-rock.svg" alt="">
           </div>
@@ -51,8 +51,37 @@
     </ul>
   </main>
 
+  <!-- Game Results -->
+  <main class="result" aria-hidden="true">
+    <ul class="result__options">
+      <li class="result__item">
+        <span class="result__text">You picked</span>
+        <button class="result__btn" id="result__btn-player">
+          <div class="result__image-container">
+            <img class="result__image" src="" alt="" id="result__img-player">
+          </div>
+        </button>
+      </li>
 
-  <footer class="footer">
+      <li class="result__item" id="result__li-computer" aria-hidden="true">
+          <span class="result__text">The house picked</span>
+          <button class="result__btn" id="result__btn-computer">
+            <div class="result__image-container">
+              <img class="result__image" src="" alt="" id="result__img-computer">
+            </div>
+          </button>
+      </li>
+
+      <li class="result__play" aria-hidden="true">
+        <span class="result__outcome"></span>
+        <button class="result__play-btn">
+          Play Again
+        </button>
+      </li>
+  </main>
+
+
+  <footer class=" footer">
     <button class="footer__rules-btn">RULES</button>
   </footer>
 
