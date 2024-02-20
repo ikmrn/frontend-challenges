@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       resultComputerBtn.classList.remove("result__btn");
       resultComputerImgContainer.setAttribute("aria-hidden", true);
       /* Show computer choice and game results after 2 seconds */
-      sleep(2000).then(() => {
+      sleep(2500).then(() => {
         /* Show play again and result of the round */
         playAgain.setAttribute("aria-hidden", false);
 
@@ -101,7 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     resultComputerBtn.classList.remove(
       `game__btn-${validOptions[computerChoice]}`
     );
-    resultComputerImg.src = "";
+    resultComputerImg.src =
+      "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
     resultComputerBtn.classList.remove("result__btn-win");
     resultPlayerBtn.classList.remove("result__btn-win");
   });
