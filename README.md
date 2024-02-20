@@ -7,6 +7,9 @@ Welcome to my repository for Frontend Mentor challenges! Here you'll find my sol
 1. [Challenge 1: QR code component](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H)
    - [Solution](https://github.com/ikmrn/frontend-challenges/tree/qr-code)
    - [Live Demo](https://ikmrn-qr.netlify.app/)
+2. [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH)
+   - [Solution](https://github.com/ikmrn/frontend-challenges/tree/rock-paper-scissors)
+   - [Live Demo](https://ikmrn-rock-paper-scissors.netlify.app/)
 
 ## About Frontend Mentor
 
