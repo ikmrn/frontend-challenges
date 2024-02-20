@@ -1,0 +1,35 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --white: hsl(0, 0%, 100%);
+  --bg-color: hsl(30, 38%, 92%);
+  --color-highlight: hsl(158, 36%, 37%);
+  --color-text: hsl(228, 12%, 48%);
+  --accent-color: hsl(212, 21%, 14%);
+
+  /* Weight */
+  --fw-normal: 500;
+  --fw-bold: 700;
+
+  /* Font Family */
+  --ff-text: "Montserrat", sans-serif;
+  --ff-title: "Fraunces", serif;
+}
+
