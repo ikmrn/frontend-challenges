@@ -27,11 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   /* Variables */
-  let countScore = 0;
+  let countScore = parseInt(localStorage.getItem("score"), 10);
   let playerChoice;
   let computerChoice;
 
-  // resultComputerBtn.classList.add(".game__btn-blinking");
+  // Check if score exists in local storage, if not, initialize it to 0
+  if (isNaN(countScore)) {
+    countScore = 0;
+    localStorage.setItem("score", "0"); // Set score to 0 in local storage
+  }
+  scoreElement.innerHTML = countScore;
 
   /* Game options event listeners */
   buttons.forEach((button) => {
@@ -45,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       computerChoice = Math.floor(Math.random() * 3);
       roundResult = playRound(playerChoice, computerChoice);
       countScore += roundResult.score;
+      localStorage.setItem("score", countScore);
 
       /* Add classes to display player choice */
       resultPlayerBtn.classList.add(`game__btn-${validOptions[playerChoice]}`);
@@ -73,13 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
         resultOutcome.innerHTML = roundResult.outcome;
         scoreElement.innerHTML = countScore;
         /* Add winner ripple effect */
-        if (roundResult.score === 1){
-          resultPlayerBtn.classList.add("result__btn-win")
+        if (roundResult.score === 1) {
+          resultPlayerBtn.classList.add("result__btn-win");
+        } else if (roundResult.score === -1) {
+          resultComputerBtn.classList.add("result__btn-win");
         }
-        else if (roundResult.score === -1) {
-          resultComputerBtn.classList.add("result__btn-win")
-        }
-
       });
     });
   });
@@ -98,9 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
       `game__btn-${validOptions[computerChoice]}`
     );
     resultComputerImg.src = "";
-    resultComputerBtn.classList.remove("result__btn-win")
-    resultPlayerBtn.classList.remove("result__btn-win")
-
+    resultComputerBtn.classList.remove("result__btn-win");
+    resultPlayerBtn.classList.remove("result__btn-win");
   });
 
   /* Button mouseup mousedown event listeners */
