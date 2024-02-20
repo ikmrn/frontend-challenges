@@ -24,7 +24,7 @@ This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://w
 ### Links
 
 - Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/faq-accordion)
-- Live Site URL: [Live demo on Netlify](https://ikmrn-qr.netlify.app)
+- Live Site URL: [Live demo on Netlify](https://ikmrn-faq-accordion.netlify.app/)
 
 ## My process
 
