@@ -9,31 +9,42 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:wght@100..900&display=swap"
     rel="stylesheet">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css">
 
   <title>Product preview card component</title>
 
 </head>
 
 <body>
+  <main class="card">
+    <img src="images/image-product-mobile.jpg" alt="Gabrielle Chanel">
 
-  Perfume
+    <section class="card__body">
+      <h3 class="card__title">Perfume</h3>
 
-  Gabrielle Essence Eau De Parfum
+      <h1 class="card__perfume-name">
+        Gabrielle Essence Eau De Parfum
+      </h1>
+      <p class="card__perfume-description">
+        A floral, solar and voluptuous interpretation composed by Olivier Polge,
+        Perfumer-Creator for the House of CHANEL.
+      </p>
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge,
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="card__perfume-price">
+        <h2 class="card__new-price">
+          $149.99
+        </h2>
+        <del class="card__old-price">
+          $169.99
+        </del>
+      </div>
+      <button class="card__btn-cart">
+        <img src="images/icon-cart.svg" alt="Cart Image" class="card__btn-image">
+        <span class="card__btn-text">Add to Cart</span>
+      </button>
+    </section>
+  </main>
 </body>
 
 </html>
