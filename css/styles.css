@@ -39,12 +39,6 @@ body {
   padding-top: 100px;
 }
 
-.heading {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 50px;
-}
-
 h1 {
   font-size: 56px;
   color: var(--color-text);
@@ -68,16 +62,13 @@ main {
   padding: 24px;
   width: min(85vw, 600px);
   padding: 24px;
+  box-shadow: 0 0 48px 8px hsla(0, 0%, 20%, 0.5);
 }
 
-.toggle-icon {
-  width: 20px;
-  height: auto;
-  margin:0 10px;
-}
-
-details[open] > summary .toggle-icon {
-  content: url("../assets/images/icon-minus.svg");
+.heading {
+  display: flex;
+  gap: 24px;
+  margin: 12px;
 }
 
 summary {
@@ -92,16 +83,27 @@ summary:hover h2 {
   cursor: pointer;
 }
 
-details[open] > summary::after {
-  background-image: url("../assets/images/icon-minus.svg");
-}
-
 details {
   padding: 24px;
 }
 
+details[open] > summary .toggle-icon {
+  content: url("../assets/images/icon-minus.svg");
+}
+
+.toggle-icon {
+  width: 20px;
+  height: auto;
+  margin: 0 10px;
+}
+
 hr {
   background-color: var(--color-highlight);
+  opacity: 0.2;
+  width: 90%;
+  height: 2px;
+  border: none;
+  margin: 0 20px;
 }
 
 @media only screen and (min-width: 750px) {
