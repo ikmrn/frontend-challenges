@@ -52,7 +52,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: min(90vw, 700px);
+  width: 85vw;
   height: auto;
   background-color: var(--white);
   border-radius: 10px;
@@ -70,6 +70,7 @@ h2 {
   text-transform: uppercase;
   color: var(--color-text);
   margin-bottom: 12px;
+  font-weight: var(--fw-normal);
 }
 
 .card__perfume-name {
@@ -118,4 +119,20 @@ h2 {
 .card__btn-text {
   color: var(--white);
   font-weight: var(--fw-bold);
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    width: 700px;
+  }
+  .card__hero-img{
+    content: url("../images/image-product-desktop.jpg");
+    width: 100%;
+    height: auto;
+  }
+  .card__body{
+    width: 400px;
+  }
+
 }
