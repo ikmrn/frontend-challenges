@@ -24,3 +24,55 @@ html {
   --color-text: hsl(292, 42%, 14%);
   --accent-color: hsl(293, 20%, 49%);
 }
+
+body {
+  height: 100vh;
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url("../assets/images/background-pattern-mobile.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 100px;
+}
+
+.heading {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 56px;
+  color: var(--color-text);
+}
+
+h2 {
+  font-size: 18px;
+  color: var(--color-text);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--color-highlight);
+  padding-top: 24px;
+}
+
+main {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 24px;
+  width: min(85vw, 600px);
+  padding: 24px;
+}
+
+
+@media only screen and (min-width: 750px) {
+  body {
+    background-image: url("../assets/images/background-pattern-desktop.svg");
+  }
+}
