@@ -31,6 +31,8 @@ Users should be able to:
 
 ### Screenshot
 
+![screenshot](images/screenshot.png)
+
 ### Links
 
 - Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/interactive-rating-component)
