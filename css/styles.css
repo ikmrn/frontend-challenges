@@ -18,15 +18,119 @@ html {
 /* Variables */
 :root {
   /* Colors */
-  --white: hsl(25, 97%, 53%);
-  --bg-color: hsl(275, 100%, 97%);
-  --primary-color: hsl(293, 16%, 49%);
+  --primary-color: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
   --light-grey: hsl(217, 12%, 63%);
-  --medium-grey: hsl(216, 12%, 54%);
+  --medium-grey: hsl(210, 20%, 18%);
   --dark-blue: hsl(213, 19%, 18%);
-  --very-dark-blue: hsl(216, 12%, 8%);
+  --bg-color: hsl(218, 16%, 10%);
+
+  --gradient-light: #232a34;
+  --gradient-dark: #0e141b;
 
   /* Font weights */
   --fw-normal: 400;
   --fw-bold: 700;
 }
+
+.rating-card[aria-hidden="true"] {
+  display: none;
+}
+.thank-card[aria-hidden="true"] {
+  display: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Rating card */
+
+.rating-card {
+  background-image: radial-gradient(
+    circle at top center,
+    var(--gradient-light),
+    var(--gradient-dark)
+  );
+  height: clamp(350px, 60vw, 400px);
+  width: clamp(350px, 60vw, 400px);
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rating-card img {
+  background-color: var(--dark-blue);
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.rating-card__heading {
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.rating-card__text {
+  color: var(--light-grey);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.rating-card__options {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+}
+.rating-card__options button {
+  background-color: var(--dark-blue);
+  width: 40px;
+  height: 40px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--light-grey);
+  border: none;
+}
+
+.rating-card__options button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.rating-card__options button.clicked {
+  background-color: var(--light-grey);
+  color: var(--white);
+}
+
+.rating-card__submit-btn {
+  background-color: var(--primary-color);
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: var(--fw-bold);
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+}
+
+.rating-card__submit-btn:hover {
+  color: var(--primary-color);
+  background-color: var(--white);
+}
+/* Thank card */
