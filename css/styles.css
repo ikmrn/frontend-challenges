@@ -1,0 +1,32 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --white: hsl(25, 97%, 53%);
+  --bg-color: hsl(275, 100%, 97%);
+  --primary-color: hsl(293, 16%, 49%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+
+  /* Font weights */
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
