@@ -21,6 +21,7 @@ html {
   --white: hsl(0, 0%, 100%);
   --bg-color: hsl(30, 38%, 92%);
   --color-highlight: hsl(158, 36%, 37%);
+  --color-highlight-dark: hsl(159, 50%, 13%);
   --color-text: hsl(228, 12%, 48%);
   --accent-color: hsl(212, 21%, 14%);
 
@@ -63,6 +64,8 @@ h2 {
   flex-direction: column;
   justify-content: center;
   padding: 16px 24px 24px;
+  height: 100%;
+  align-self: stretch;
 }
 
 .card__title {
@@ -115,6 +118,9 @@ h2 {
   gap: 10px;
   border-radius: 8px;
 }
+.card__btn-cart:hover {
+  background-color: var(--color-highlight-dark);
+}
 
 .card__btn-text {
   color: var(--white);
@@ -126,13 +132,14 @@ h2 {
     flex-direction: row;
     width: 700px;
   }
-  .card__hero-img{
+  .card__hero-img {
     content: url("../images/image-product-desktop.jpg");
-    width: 100%;
+    width: 50%;
     height: auto;
   }
-  .card__body{
-    width: 400px;
+  .card__body {
+    width: 50%;
+    height: 525px;
+    justify-content: space-evenly;
   }
-
 }
