@@ -8,36 +8,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100..900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/index.js"></script>
   <title>Interactive rating component</title>
-
-
 </head>
 
 <body>
 
   <!-- Rating state start -->
-
-  How did we do?
-
-  Please let us know how we did with your support request. All feedback is appreciated
-  to help us improve our offering!
-
-  1 2 3 4 5
-
-  Submit
-
+  <section class="rating-card" aria-hidden="false">
+    <img src="images/icon-star.svg" alt="">
+    <h1 class="rating-card__heading">How did we do?</h1>
+    <p class="rating-card__text">
+      Please let us know how we did with your support request. All feedback is appreciated
+      to help us improve our offering!
+    </p>
+    <ul class="rating-card__options">
+      <li><button>1</button></li>
+      <li><button>2</button></li>
+      <li><button>3</button></li>
+      <li><button>4</button></li>
+      <li><button>5</button></li>
+    </ul>
+    <button class="rating-card__submit-btn">
+      Submit
+    </button>
+  </section>
   <!-- Rating state end -->
 
   <!-- Thank you state start -->
+  <section class="thank-card" aria-hidden="true">
+    <img src="images/illustration-thank-you.svg" alt="">
 
-  You selected <!-- Add rating here --> out of 5
+    You selected <!-- Add rating here --> out of 5
 
-  Thank you!
+    <h1 class="thank-card__heading">Thank you!</h1>
 
-  We appreciate you taking the time to give a rating. If you ever need more support,
-  don’t hesitate to get in touch!
-
+    <p class="thank-card__text">We appreciate you taking the time to give a rating. If you ever need more support,
+      don’t hesitate to get in touch!
+    </p>
+  </section>
   <!-- Thank you state end -->
 
 </body>
