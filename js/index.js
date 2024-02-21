@@ -1,20 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   const ratingCard = document.querySelector(".rating-card");
   const thankCard = document.querySelector(".thank-card");
-  const optionsBtns = document.querySelectorAll(
-    ".rating-card__options li button"
-  );
   const submitBtn = document.querySelector(".rating-card__submit-btn");
   const selectedOption = document.getElementById("selected-option");
+  const optionsContainer = document.querySelector(".rating-card__options");
+
   let lastClickedRating = null;
 
-  optionsBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
+  // Define the number of options
+  const numOptions = 5;
+
+  // Dynamically generate the options
+  for (let i = 1; i <= numOptions; i++) {
+    const button = document.createElement("button");
+    button.textContent = i;
+    const listItem = document.createElement("li");
+    listItem.appendChild(button);
+    optionsContainer.appendChild(listItem);
+
+    button.addEventListener("click", () => {
       removeClicked();
-      lastClickedRating = btn.innerHTML;
-      btn.classList.add("clicked");
+      lastClickedRating = i;
+      button.classList.add("clicked");
     });
-  });
+  }
 
   submitBtn.addEventListener("click", () => {
     if (lastClickedRating === null) {
@@ -28,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function removeClicked() {
-    optionsBtns.forEach((button) => {
+    const buttons = optionsContainer.querySelectorAll("button");
+    buttons.forEach((button) => {
       button.classList.remove("clicked");
     });
   }
