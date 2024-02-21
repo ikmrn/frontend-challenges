@@ -59,8 +59,8 @@ body {
     var(--gradient-light),
     var(--gradient-dark)
   );
-  height: clamp(350px, 60vw, 400px);
-  width: clamp(350px, 60vw, 400px);
+  height: clamp(370px, 60vw, 400px);
+  width: clamp(350px, 60vw, 390px);
   border-radius: 20px;
   padding: 25px;
   display: flex;
@@ -134,3 +134,88 @@ body {
   background-color: var(--white);
 }
 /* Thank card */
+
+
+.thank-card {
+  background-image: radial-gradient(
+    circle at top center,
+    var(--gradient-light),
+    var(--gradient-dark)
+  );
+  height: clamp(370px, 60vw, 400px);
+  width: clamp(350px, 60vw, 390px);
+  border-radius: 20px;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thank-card img {
+
+  margin-bottom: 20px;
+}
+
+.thank-card__text-selected {
+  background-color: var(--medium-grey);
+  color: var(--primary-color);
+  padding: 5px 15px;
+  padding-top: 8px;
+  border-radius: 20px;
+  margin-bottom: 29px;
+}
+
+.thank-card__heading {
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.thank-card__text {
+  color: var(--light-grey);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.rating-card__options {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+}
+.rating-card__options button {
+  background-color: var(--dark-blue);
+  width: 40px;
+  height: 40px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--light-grey);
+  border: none;
+}
+
+.rating-card__options button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.rating-card__options button.clicked {
+  background-color: var(--light-grey);
+  color: var(--white);
+}
+
+.rating-card__submit-btn {
+  background-color: var(--primary-color);
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: var(--fw-bold);
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+}
