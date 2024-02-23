@@ -1,25 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/index.js"></script>
   <title>Launch countdown timer</title>
 
 </head>
+
 <body>
+  <main class="timer">
 
-  We're launching soon
+    <h1 class="timer__heading">We're launching soon</h1>
+    <ul class="timer__countdown">
 
-  Days
-  Hours
-  Minutes
-  Seconds
-  
+      <li class="timer__unit">
+        <div class="timer__time" id="days">
+          <div class="timer__card-top">25</div>
+          <div class="timer__card-bottom">25</div>
+
+          <div class="timer__flip flip-digit">
+            <div class="timer__flip-top">25</div>
+            <div class="timer__flip-bottom">25</div>
+          </div>
+        </div>
+        <h2 class="timer__text">Days</h2>
+      </li>
+
+      <li class="timer__unit">
+        <div class="timer__time" id="hours">
+          <div class="timer__card-top"></div>
+          <div class="timer__card-bottom"></div>
+
+          <div class="timer__flip">
+            <div class="timer__flip-top"></div>
+            <div class="timer__flip-bottom"></div>
+          </div>
+        </div>
+        <h2 class="timer__text">Hours</h2>
+      </li>
+
+      <li class="timer__unit">
+        <div class="timer__time" id="minutes">
+          <div class="timer__card-top"></div>
+          <div class="timer__card-bottom"></div>
+
+          <div class="timer__flip">
+            <div class="timer__flip-top"></div>
+            <div class="timer__flip-bottom"></div>
+          </div>
+        </div>
+        <h2 class="timer__text">Minutes</h2>
+      </li>
+
+      <li class="timer__unit">
+        <div class="timer__time" id="seconds">
+          <div class="timer__card-top"></div>
+          <div class="timer__card-bottom"></div>
+
+          <div class="timer__flip">
+            <div class="timer__flip-top"></div>
+            <div class="timer__flip-bottom"></div>
+          </div>
+        </div>
+        <h2 class="timer__text">Seconds</h2>
+      </li>
+
+    </ul>
+  </main>
+  <footer class="footer">
+    <ul class="footer__social">
+      <li class="footer_el">
+        <a href="https://facebook.com" rel="noopener" target="_blank" aria-label="Facebook link">
+          <svg class="footer__svg">
+            <use href="images/sprites.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__el">
+        <a href="https://pinterest.com" rel="noopener" target="_blank" aria-label="Pinterest link">
+          <svg class="footer__svg">
+            <use href="images/sprites.svg#pinterest"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer_el">
+        <a href="https://instagram.com" rel="noopener" target="_blank" aria-label="Instagram link">
+          <svg class="footer__svg">
+            <use href="images/sprites.svg#instagram"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
 </body>
+
 </html>
