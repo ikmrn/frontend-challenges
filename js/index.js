@@ -47,28 +47,23 @@ function updateCard(element, timeValue) {
     return;
   } else {
     /* Flip */
-    element.flip.flipBottom.textContent = getTimeString(oldTimeValue);
     element.flip.flipCard.classList.add("flip");
-    element.flip.flipTop.textContent = getTimeString(oldTimeValue);
-
-    /* Card */
-    element.card.top.textContent = getTimeString(oldTimeValue);
-    element.card.bottom.textContent = getTimeString(oldTimeValue);
 
     setTimeout(() => {
-      /* Card */
       element.card.top.textContent = getTimeString(timeValue);
+      
+    }, 200);
+    setTimeout(() => {
       element.flip.flipBottom.textContent = getTimeString(timeValue);
       element.flip.flipTop.textContent = getTimeString(timeValue);
-    }, 275);
+    }, 350);
+    setTimeout(() => {
+      element.card.bottom.textContent = getTimeString(timeValue);
+    }, 500);
     setTimeout(() => {
       /* Flip */
       element.flip.flipCard.classList.remove("flip");
       element.flip.flipBottom.textContent = getTimeString(timeValue);
-    }, 950);
-    setTimeout(() => {
-      /* Card */
-      element.card.bottom.textContent = getTimeString(timeValue);
     }, 900);
   }
 }
