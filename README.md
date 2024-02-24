@@ -26,10 +26,12 @@ This is a solution to the [Launch countdown timer challenge on Frontend Mentor](
 
 ### Screenshot
 
+![screenshot](design/screenshot.png)
+
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/interactive-rating-component)
-- Live Site URL: [Live demo on Netlify](https://ikmrn-interactive-rating.netlify.app/)
+- Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/launch-countdown-timer)
+- Live Site URL: [Live demo on Netlify](https://ikmrn-countdown-timer.netlify.app/)
 
 ## My process
 
