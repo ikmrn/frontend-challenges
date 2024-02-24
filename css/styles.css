@@ -44,6 +44,7 @@ html {
   --timer-margin-bottom: 25px;
   --cutout: 5px;
   --letter-spacing: 2px;
+  --box-shadow-width: 5px;
 }
 
 body {
@@ -109,7 +110,7 @@ body {
   left: 0;
   overflow: hidden;
   box-shadow: 0px calc(var(--gap) / 3) 0px 0px var(--dark);
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 }
 
 .timer__card-top,
@@ -132,8 +133,6 @@ body {
   background-color: var(--card-top);
   padding-top: 50%;
   overflow: hidden;
-
-
   background-image: radial-gradient(
       circle at 100% 100%,
       var(--dark) var(--cutout),
@@ -158,9 +157,6 @@ body {
   background-color: var(--card-bottom);
   padding-bottom: 50%;
   overflow: hidden;
-
-  /* transform: rotateX(-180deg); */
-
   background-image: radial-gradient(
       circle at 0% 0%,
       var(--dark) var(--cutout),
@@ -210,7 +206,7 @@ body {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: var(--border-radius);
-  box-shadow: 0 -5px 2px var(--dark);
+  box-shadow: 0 calc(var(--box-shadow-width) * (-1)) 2px var(--dark);
   transform-style: preserve-3d;
   overflow: hidden;
 }
@@ -245,7 +241,7 @@ body {
   background-color: var(--card-bottom);
   padding-bottom: 50%;
   transform: rotateX(-180deg);
-  box-shadow: 0 5px 2px var(--dark);
+  box-shadow: 0 var(--box-shadow-width) 2px var(--dark);
 
   background-image: radial-gradient(
       circle at 100% 0%,
@@ -289,6 +285,24 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
+  :root {
+    /* Font */
+    --fs-heading: 2.5rem;
+    --fs-card: 4rem;
+    --fs-card-text: 1.5rem;
+
+    /* Sizes */
+    --card-size: 140px;
+    --card-half-size: calc(var(--card-size));
+    --border-radius: 10px;
+    --gap: 40px;
+    --timer-padding: 35px;
+    --timer-margin-bottom: 40px;
+    --cutout: 10px;
+    --letter-spacing: 3px;
+    --box-shadow-width: 10px;
+  }
+
   body {
     background: url("../images/pattern-hills.svg") no-repeat bottom/contain,
       url("../images/bg-stars.svg") no-repeat,
