@@ -5,10 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     days = getElement("days");
 
   updateTime(seconds, minutes, hours, days);
-  setInterval(
-    () => updateTime(seconds, minutes, hours, days),
-    1000
-  );
+  setInterval(() => updateTime(seconds, minutes, hours, days), 1000);
 });
 
 function getElement(time) {
@@ -28,10 +25,10 @@ function getCurrentTime() {
   let now = Date.now();
   /* Set Max days to 42 :) */
   return {
-    days: (now / 864e5) % 42 | 0,
-    hours: (now / 36e5) % 24 | 0,
-    minutes: (now / 6e4) % 60 | 0,
-    seconds: (now / 1e3) % 60 | 0,
+    days: (42 - ((now / 864e5) % 42)) | 0,
+    hours: (24 - ((now / 36e5) % 24)) | 0,
+    minutes: (60 - ((now / 6e4) % 60)) | 0,
+    seconds: (60 - ((now / 1e3) % 60)) | 0,
   };
 }
 
@@ -45,23 +42,34 @@ function updateTime(seconds, minutes, hours, days) {
 
 function updateCard(element, timeValue) {
   const oldTimeValue = parseInt(element.card.bottom.textContent);
+  // console.log(oldTimeValue);
   if (isNaN(oldTimeValue) || oldTimeValue === timeValue) {
     return;
   } else {
-    element.flip.flipTop.textContent = getTimeString(timeValue);
+    /* Flip */
     element.flip.flipBottom.textContent = getTimeString(oldTimeValue);
     element.flip.flipCard.classList.add("flip");
+    element.flip.flipTop.textContent = getTimeString(oldTimeValue);
+
+    /* Card */
+    element.card.top.textContent = getTimeString(oldTimeValue);
+    element.card.bottom.textContent = getTimeString(oldTimeValue);
+
     setTimeout(() => {
+      /* Card */
       element.card.top.textContent = getTimeString(timeValue);
-      element.card.bottom.textContent = getTimeString(timeValue);
-    }, 400);
+      element.flip.flipBottom.textContent = getTimeString(timeValue);
+      element.flip.flipTop.textContent = getTimeString(timeValue);
+    }, 275);
     setTimeout(() => {
+      /* Flip */
       element.flip.flipCard.classList.remove("flip");
-    }, 900);
+      element.flip.flipBottom.textContent = getTimeString(timeValue);
+    }, 950);
     setTimeout(() => {
-      element.card.top.textContent = getTimeString(timeValue);
+      /* Card */
       element.card.bottom.textContent = getTimeString(timeValue);
-    }, 500);
+    }, 900);
   }
 }
 
