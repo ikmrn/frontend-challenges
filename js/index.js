@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     hours = getElement("hours"),
     days = getElement("days");
 
-  updateTime();
+  updateTime(seconds, minutes, hours, days);
+  setInterval(
+    () => updateTime(seconds, minutes, hours, days),
+    1000
+  );
 });
 
 function getElement(time) {
@@ -13,7 +17,7 @@ function getElement(time) {
     bottom: document.querySelector(`#${time} .timer__card-bottom`),
   };
   const flip = {
-    card: document.querySelector(`#${time} .timer__flip`),
+    flipCard: document.querySelector(`#${time} .timer__flip`),
     flipTop: document.querySelector(`#${time} .timer__flip-top`),
     flipBottom: document.querySelector(`#${time} .timer__flip-bottom`),
   };
@@ -31,7 +35,7 @@ function getCurrentTime() {
   };
 }
 
-function updateTime() {
+function updateTime(seconds, minutes, hours, days) {
   const currentTime = getCurrentTime();
   updateCard(seconds, currentTime.seconds);
   updateCard(minutes, currentTime.minutes);
@@ -40,18 +44,27 @@ function updateTime() {
 }
 
 function updateCard(element, timeValue) {
-  const oldTimeValue = parseInt(element.flip.flipTop.textContent);
-  if (oldTimeValue === timeValue) {
+  const oldTimeValue = parseInt(element.card.bottom.textContent);
+  if (isNaN(oldTimeValue) || oldTimeValue === timeValue) {
     return;
   } else {
-    element.card.top.textContent =
-      oldTimeValue < 10 ? `0${oldTimeValue}` : oldTimeValue;
-    element.card.bottom.textContent =
-      oldTimeValue < 10 ? `0${oldTimeValue}` : oldTimeValue;
-    element.flip.flipTop.textContent =
-      timeValue < 10 ? `0${timeValue}` : timeValue;
-    element.flip.flipBottom.textContent =
-      timeValue < 10 ? `0${timeValue}` : timeValue;
+    element.flip.flipTop.textContent = getTimeString(timeValue);
+    element.flip.flipBottom.textContent = getTimeString(oldTimeValue);
     element.flip.flipCard.classList.add("flip");
+    setTimeout(() => {
+      element.card.top.textContent = getTimeString(timeValue);
+      element.card.bottom.textContent = getTimeString(timeValue);
+    }, 400);
+    setTimeout(() => {
+      element.flip.flipCard.classList.remove("flip");
+    }, 900);
+    setTimeout(() => {
+      element.card.top.textContent = getTimeString(timeValue);
+      element.card.bottom.textContent = getTimeString(timeValue);
+    }, 500);
   }
+}
+
+function getTimeString(time) {
+  return time < 0 ? "00" : time < 10 ? `0${time}` : String(time);
 }
