@@ -131,6 +131,8 @@ body {
   bottom: 50%;
   background-color: var(--card-top);
   padding-top: 50%;
+  overflow: hidden;
+
 
   background-image: radial-gradient(
       circle at 100% 100%,
@@ -155,6 +157,8 @@ body {
   height: 50%;
   background-color: var(--card-bottom);
   padding-bottom: 50%;
+  overflow: hidden;
+
   /* transform: rotateX(-180deg); */
 
   background-image: radial-gradient(
@@ -229,7 +233,7 @@ body {
       var(--dark) var(--cutout),
       transparent var(--cutout)
     );
-  z-index: 1;
+  z-index: 3;
 }
 
 .timer__flip-bottom {
