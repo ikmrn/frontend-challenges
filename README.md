@@ -44,17 +44,13 @@ This is a solution to the [Launch countdown timer challenge on Frontend Mentor](
 
 ### What I learned
 
-During this project, I gained valuable experience in state management by implementing state changes for different components. Specifically, I learned how to create a rating component from scratch, which involved handling user interactions to select a rating option and dynamically updating the UI based on the user's choice.
+I gained experience in manipulating SVG images and creating sprites from them. This allowed me to enhance the visual elements of my projects and optimize performance by reducing the number of HTTP requests.
 
-I deepened my understanding of web forms by learning how to prevent form submission when certain conditions are not met. This knowledge is crucial for ensuring data integrity and providing a smooth user experience.
-
-Additionally, I delved into dynamically generating HTML elements with JavaScript, improving code efficiency and maintainability while adhering to standardized practices.
-
-Overall, this project provided me with practical hands-on experience in front-end development, reinforcing key concepts such as state management and form handling.
+My understanding of CSS transitions deepened as I explored various transition effects and techniques. Experimenting with Bezier curves enabled me to fine-tune animation timing and easing, resulting in smoother and more dynamic user interfaces.
 
 ### Continued development
 
-In future projects, I aim to further enhance my understanding of web development practices, particularly in areas related to security. I am eager to explore topics such as secure coding practices, data validation, and protecting against common security threats. Additionally, I plan to continue refining my skills in front-end development and exploring advanced techniques to create more robust and user-friendly web applications.
+As I continue to develop my skills, I plan to explore more advanced CSS transition techniques to enhance user experiences. Additionally, I'm interested in incorporating type checking into my projects, with TypeScript. This approach will help improve code reliability and maintainability, contributing to the overall quality of my development work.
 
 ## Author
 
