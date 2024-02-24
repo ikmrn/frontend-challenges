@@ -56,7 +56,7 @@ function updateCard(element, timeValue) {
     setTimeout(() => {
       element.flip.flipBottom.textContent = getTimeString(timeValue);
       element.flip.flipTop.textContent = getTimeString(timeValue);
-    }, 350);
+    }, 300);
     setTimeout(() => {
       element.card.bottom.textContent = getTimeString(timeValue);
     }, 500);
