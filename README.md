@@ -26,12 +26,12 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
 
 ### Screenshot
 
-![screenshot](design/screenshot.png)
+![screenshot](assets/images/screenshot.png)
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/launch-countdown-timer)
-- Live Site URL: [Live demo on Netlify](https://ikmrn-countdown-timer.netlify.app/)
+- Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/blog-preview)
+- Live Site URL: [Live demo on Netlify](https://ikmrn-blog-preview.netlify.app/)
 
 ## My process
 
@@ -41,18 +41,15 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- JavaScript for interactivity
-- Responsive design for mobile and desktop devices
 
 ### What I learned
 
-I gained experience in manipulating SVG images and creating sprites from them. This allowed me to enhance the visual elements of my projects and optimize performance by reducing the number of HTTP requests.
-
-My understanding of CSS transitions deepened as I explored various transition effects and techniques. Experimenting with Bezier curves enabled me to fine-tune animation timing and easing, resulting in smoother and more dynamic user interfaces.
+I've been practicing flexbox and CSS positioning techniques to improve my web design skills. Flexbox helps me arrange elements in layouts more efficiently, while CSS positioning allows for precise control over element placement on webpages.
 
 ### Continued development
 
-As I continue to develop my skills, I plan to explore more advanced CSS transition techniques to enhance user experiences. Additionally, I'm interested in incorporating type checking into my projects, with TypeScript. This approach will help improve code reliability and maintainability, contributing to the overall quality of my development work.
+I'm eager to enhance my web development skills by learning Tailwind CSS.
+I believe that embracing Tailwind CSS will not only streamline my development process but also empower me to build better user experiences. I look forward to the opportunity to experiment with Tailwind's flexible utility classes
 
 ## Author
 
