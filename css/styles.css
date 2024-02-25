@@ -1,0 +1,29 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --white: hsl(0, 0%, 100%);
+  --color-title: hsl(24, 5%, 18%);
+  --color-heading: hsl(14, 45%, 36%);
+  --color-heading-raspberry: hsl(332, 51%, 32%);
+  --color-text: hsl(30, 10%, 34%);
+  --bg-color: hsl(30, 54%, 90%);
+  --bg-color-card: hsl(330, 100%, 98%);
+  --hr-color: hsl(30, 18%, 87%);
+}
