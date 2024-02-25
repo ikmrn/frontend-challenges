@@ -1,0 +1,44 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --white: hsl(0, 0%, 100%);
+  --soft-red: hsl(7, 99%, 70%);
+  --yellow: hsl(51, 100%, 49%);
+  --dark-cyan-design-text: hsl(167, 40%, 24%);
+  --dark-blue-photo-text: hsl(198, 62%, 26%);
+  --cyan-footer: hsl(168, 34%, 41%);
+  --greyish-400: hsl(213, 9%, 39%);
+  --greyish-300: hsl(232, 10%, 55%);
+  --greyish-200: hsl(210, 4%, 67%);
+  --very-dark-blue: hsl(212, 27%, 19%);
+
+  /* Fonts */
+  --fs-text: 18px;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+h1 {
+  font-family: "Fraunces", serif;
+}
