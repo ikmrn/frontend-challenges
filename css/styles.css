@@ -50,7 +50,6 @@ body {
   background-color: var(--bg-color);
   display: flex;
   justify-content: center;
-  align-items: column;
   font-family: "Outfit", sans-serif;
   color: var(--color-text);
   font-weight: 400;
@@ -59,7 +58,7 @@ body {
 h1,
 h2 {
   font-family: "Young Serif", serif;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 2px;
 }
 h1 {
@@ -110,6 +109,9 @@ hr {
   color: var(--color-heading-raspberry);
   font-weight: 600;
   margin-bottom: 20px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.25rem;
+  margin: 0;
 }
 
 .recipe__prep--item::marker {
