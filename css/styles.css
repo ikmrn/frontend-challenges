@@ -75,7 +75,7 @@ body {
   text-transform: uppercase;
   color: var(--white);
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: var(--letter-spacing);
   font-size: var(--fs-heading);
   line-height: 1.7;
   margin-bottom: var(--timer-margin-bottom);
@@ -99,7 +99,7 @@ body {
   align-items: center;
   color: var(--accent);
   font-size: var(--fs-card);
-  letter-spacing: 2px;
+  letter-spacing: var(--letter-spacing);
   width: var(--card-size);
   height: var(--card-size);
   margin-bottom: var(--timer-margin-bottom);
@@ -287,26 +287,35 @@ body {
 @media only screen and (min-width: 1024px) {
   :root {
     /* Font */
-    --fs-heading: 2.5rem;
-    --fs-card: 4rem;
-    --fs-card-text: 1.5rem;
+    --fs-heading: max(2.5rem, 2vw);
+    --fs-card: max(4rem, 3.5vw);
+    --fs-card-text: max(1.5rem, 1.5vw);
 
     /* Sizes */
-    --card-size: 140px;
+    --card-size: max(140px, 7vw);
     --card-half-size: calc(var(--card-size));
-    --border-radius: 10px;
-    --gap: 40px;
-    --timer-padding: 35px;
-    --timer-margin-bottom: 40px;
-    --cutout: 10px;
-    --letter-spacing: 3px;
-    --box-shadow-width: 10px;
+    --border-radius: max(10px, 0.45vw);
+    --gap: max(40px, 1.75vw);
+    --timer-padding: max(35px, 1.5vw);
+    --timer-margin-bottom: max(40px, 2vw);
+    --cutout: max(10px, 0.45vw);
+    --letter-spacing: max(3px, 0.25vw);
+    --box-shadow-width: max(10px, 0.45vw);
   }
 
   body {
     background: url("../images/pattern-hills.svg") no-repeat bottom/contain,
-      url("../images/bg-stars.svg") no-repeat,
+      url("../images/bg-stars.svg"),
       linear-gradient(var(--dark) 30%, var(--gradient-light) 80%);
     background-size: 100% 35%, auto, auto;
+  }
+
+  .footer__svg {
+    width: clamp(24px, 2vw, 240px);
+    height: clamp(24px, 2vw, 240px);
+  }
+  .footer__social {
+    margin-bottom: clamp(50px, 5vw, 500px);
+    gap: clamp(50px, 4vw, 500px);
   }
 }
