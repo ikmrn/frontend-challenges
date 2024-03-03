@@ -25,12 +25,12 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 
 ### Screenshot
 
-![screenshot](assets/images/screenshot.png)
+![screenshot](images/screenshot.png)
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/recipe-page)
-- Live Site URL: [Live demo on Netlify](https://ikmrn-recipe.netlify.app/)
+- Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/sunnyside-landing)
+- Live Site URL: [Live demo on Netlify](https://ikmrn-sunnyside-landing.netlify.app/)
 
 ## My process
 
@@ -39,16 +39,17 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Grid
 
 ### What I learned
 
-During this project, I gained insight into the challenges and time-consuming nature of naming conventions. Previously, while working on Python projects, I underestimated the difficulty of naming and couldn't comprehend why it was such a common topic of discussion. However, through this project, I experienced firsthand the struggle of finding the right names and the frustration of spending hours on naming and renaming tasks.
+Throughout this project, I gained valuable insights into creating a responsive web page that maintains its aspect ratios across various screen resolutions, including 4K and 8K. By leveraging viewport units (vw and vh), I dynamically adjusted layout sizes, font sizes, and container dimensions to ensure adaptability to different screen sizes. This experience has deepened my understanding of responsive design principles and techniques.
+
+Additionally, I had the opportunity to practice working with SVG sprites, manipulating dimensions, and colors. Integrating SVG sprites into the project allowed me to enhance scalability and optimize performance while maintaining crisp, high-quality graphics across devices. This hands-on experience further expanded my skill set and provided valuable insights into leveraging SVGs for web development.
 
 ### Continued development
 
-Moving forward, I aim to explore techniques to streamline the naming process and reduce the time spent on it. One avenue I plan to explore is Tailwind CSS, which offers utility classes that can simplify styling and potentially reduce the need for custom naming conventions.
-
-Additionally, I will focus on refining my naming practices to achieve greater clarity, conciseness, and consistency in my code. This includes reviewing and adjusting naming conventions where necessary to improve readability and maintainability.
+Moving forward, I am keen on further enhancing my skills in creating more sophisticated layout containers and improving overall design aesthetics. I aim to explore advanced techniques and best practices in web development, such as CSS Grid and Flexbox, to achieve more flexible and efficient layouts.
 
 ## Author
 
