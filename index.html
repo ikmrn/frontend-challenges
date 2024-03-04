@@ -18,14 +18,15 @@
 
 </head>
 
-<body class="bg-veryDarkBlue text-white">
+<body class="bg-veryDarkBlue text-white font-sans flex items-center justify-center h-screen">
 
-  <section class="flex flex-col px-6 py-12 xl:flex-row">
+  <section
+    class="flex flex-col w-full items-center px-6 py-12 max-w-screen-2xl md:py-32 xl:flex-row xl:justify-center xl:items-center ">
 
     <!-- Header -->
-    <header class="overflow-hidden bg-darkBlue rounded-xl xl:min-w-[300px]">
+    <header class="overflow-hidden bg-darkBlue rounded-xl w-full xl:min-w-[300px]">
       <!-- User image and name -->
-      <div class="flex items-center rounded-xl p-6 bg-blue xl:flex-col xl:items-start ">
+      <div class="flex items-center rounded-xl p-6 bg-blue  xl:flex-col xl:items-start ">
         <!-- User image -->
         <img src="images/image-jeremy.png" class="border-white w-20" alt="User Avatar">
         <div class="flex flex-col p-6 xl:px-0">
@@ -44,16 +45,36 @@
 
 
     </header>
-    <div class="py-6 flex flex-col">
-      <div class="work">
-        Work
-        5hrs <!-- daily -->
-        Previous - 7hrs <!-- daily -->
-        32hrs <!-- weekly -->
-        Previous - 36hrs <!-- weekly -->
-        103hrs <!-- monthly -->
-        Previous - 128hrs <!-- monthly -->
+    <div class="m-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+      <!-- Work card-->
+      <div class="card work bg-lightRedWork pt-12 overflow-hidden rounded-xl">
+        <div class="bg-darkBlue rounded-xl p-6 flex flex-col hover:bg-darkBLueHover transition-colors duration-300">
+          <div class="flex items-center justify-between">
+            <strong class="text-xl font-medium">Work</strong>
+            <img src="images/icon-ellipsis.svg" alt="">
+          </div>
+
+          <!-- Daily Text -->
+          <div class="daily flex justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">5hrs</strong>
+            <span class="py-1 text-desaturatedBlue">Yesterday - 7hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Weekly Text -->
+          <div class="weekly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">32hrs</strong>
+            <span class="py-1 text-desaturatedBlue"> Last Week - 36hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Monthly Text -->
+          <div class="monthly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">103hrs</strong>
+            <span class="py-1 text-desaturatedBlue">Last Month - 128hrs </span> <!-- daily -->
+          </div>
+        </div>
       </div>
+
+      <!-- Play card -->
       <div class="play">
         Play
         1hr <!-- daily -->
