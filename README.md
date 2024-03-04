@@ -1,6 +1,6 @@
 # Frontend Mentor - Time tracking dashboard solution
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -22,8 +22,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 ### The challenge
 
-Users should be able to:
-
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
@@ -41,20 +39,21 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - Grid
+- Tailwind
 
 ### What I learned
 
-Throughout this project, I gained valuable insights into creating a responsive web page that maintains its aspect ratios across various screen resolutions, including 4K and 8K. By leveraging viewport units (vw and vh), I dynamically adjusted layout sizes, font sizes, and container dimensions to ensure adaptability to different screen sizes. This experience has deepened my understanding of responsive design principles and techniques.
+My recent foray into Tailwind CSS has been truly enlightening. I found myself drawn to its simplicity and user-friendly nature. However, my inaugural Tailwind project proved to be more time-consuming than I initially anticipated. Despite this challenge, I was captivated by its intuitive functionality.
 
-Additionally, I had the opportunity to practice working with SVG sprites, manipulating dimensions, and colors. Integrating SVG sprites into the project allowed me to enhance scalability and optimize performance while maintaining crisp, high-quality graphics across devices. This hands-on experience further expanded my skill set and provided valuable insights into leveraging SVGs for web development.
+One aspect of Tailwind that particularly stood out to me was its approach to styling. While incredibly efficient, the abundance of classes within the HTML structure initially felt overwhelming. Admittedly, the sheer volume of classes can appear excessive. However, the minimal need for custom class naming was a significant advantage, simplifying the development process considerably.
+
+In summary, while there were moments of difficulty, my overall experience with Tailwind CSS was positive. Its combination of simplicity and efficiency offers a promising path for future projects.
 
 ### Continued development
 
-Moving forward, I am keen on further enhancing my skills in creating more sophisticated layout containers and improving overall design aesthetics. I aim to explore advanced techniques and best practices in web development, such as CSS Grid and Flexbox, to achieve more flexible and efficient layouts.
+Moving forward, I am eager to delve deeper into the learning Tailwind CSS. The initial encounter with this framework has ignited a desire within me to expand my knowledge and skills in its usage. I am motivated to uncover more of its intricacies, explore advanced features, and master efficient workflows.
 
 ## Author
 
