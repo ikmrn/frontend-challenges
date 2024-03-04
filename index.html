@@ -18,13 +18,13 @@
 
 </head>
 
-<body class="bg-veryDarkBlue text-white font-sans flex items-center justify-center h-screen">
+<body class="bg-veryDarkBlue text-white font-sans items-center justify-center h-screen relative">
 
   <section
-    class="flex flex-col w-full items-center px-6 py-12 max-w-screen-2xl md:py-32 xl:flex-row xl:justify-center xl:items-center ">
+    class="flex flex-col w-full items-center px-6 py-12 max-w-[1200px] xl:h-[540px] xl:flex-row xl:justify-center xl:items-center xl:absolute xl:top-1/2 xl:left-1/2 xl:transform xl:-translate-x-1/2 xl:-translate-y-1/2">
 
     <!-- Header -->
-    <header class="overflow-hidden bg-darkBlue rounded-xl w-full xl:min-w-[300px]">
+    <header class="h-full flex flex-col overflow-hidden bg-darkBlue  rounded-xl w-full xl:min-w-[300px] xl:max-w-64">
       <!-- User image and name -->
       <div class="flex items-center rounded-xl p-6 bg-blue  xl:flex-col xl:items-start ">
         <!-- User image -->
@@ -34,40 +34,39 @@
           <span class="text-lg pb-2">Report for</span>
           <h2 class="text-2xl xl:text-4xl">Jeremy Robson</h2>
         </div>
-
       </div>
-      <ul class="flex items-center justify-between p-6 gap-4 text-desaturatedBlue xl:flex-col xl:items-start ">
+      <ul id="time-options"
+        class="h-full flex items-center justify-between p-6 gap-4 text-desaturatedBlue xl:flex-col xl:items-start">
         <li><a href="#" class="daily hover:text-white transition-colors duration-300">Daily</a></li>
         <li><a href="#" class="weekly hover:text-white transition-colors duration-300">Weekly</a></li>
         <li><a href="#" class="monthly hover:text-white transition-colors duration-300">Monthly</a></li>
-
       </ul>
-
-
     </header>
-    <div class="m-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+    <!-- Time cards -->
+    <div class="h-full w-full m-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
       <!-- Work card-->
       <div class="card work bg-lightRedWork pt-12 overflow-hidden rounded-xl">
         <div class="bg-darkBlue rounded-xl p-6 flex flex-col hover:bg-darkBLueHover transition-colors duration-300">
           <div class="flex items-center justify-between">
             <strong class="text-xl font-medium">Work</strong>
-            <img src="images/icon-ellipsis.svg" alt="">
+            <img class="cursor-pointer" src="images/icon-ellipsis.svg" alt="">
           </div>
 
           <!-- Daily Text -->
-          <div class="daily flex justify-between items-end mt-4 lg:flex-col lg:items-start">
+          <div class="card__text daily flex justify-between items-end mt-4 lg:flex-col lg:items-start">
             <strong class="text-4xl font-normal">5hrs</strong>
             <span class="py-1 text-desaturatedBlue">Yesterday - 7hrs</span> <!-- daily -->
           </div>
 
           <!-- Weekly Text -->
-          <div class="weekly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+          <div class="card__text weekly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
             <strong class="text-4xl font-normal">32hrs</strong>
             <span class="py-1 text-desaturatedBlue"> Last Week - 36hrs</span> <!-- daily -->
           </div>
 
           <!-- Monthly Text -->
-          <div class="monthly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+          <div class="card__text monthly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
             <strong class="text-4xl font-normal">103hrs</strong>
             <span class="py-1 text-desaturatedBlue">Last Month - 128hrs </span> <!-- daily -->
           </div>
@@ -75,56 +74,155 @@
       </div>
 
       <!-- Play card -->
-      <div class="play">
-        Play
-        1hr <!-- daily -->
-        Previous - 2hrs <!-- daily -->
-        10hrs <!-- weekly -->
-        Previous - 8hrs <!-- weekly -->
-        23hrs <!-- monthly -->
-        Previous - 29hrs <!-- monthly -->
-      </div>
-      <div class="study">
-        Study
-        0hrs <!-- daily -->
-        Previous - 1hr <!-- daily -->
-        4hrs <!-- weekly -->
-        Previous - 7hrs <!-- weekly -->
-        13hrs <!-- monthly -->
-        Previous - 19hrs <!-- monthly -->
+      <div class="card play bg-softBLuePlay pt-12 overflow-hidden rounded-xl">
+        <div class="bg-darkBlue rounded-xl p-6 flex flex-col hover:bg-darkBLueHover transition-colors duration-300">
+          <div class="flex items-center justify-between">
+            <strong class="text-xl font-medium">Play</strong>
+            <img class="cursor-pointer" src="images/icon-ellipsis.svg" alt="">
+          </div>
+
+          <!-- Daily Text -->
+          <div class="card__text daily flex justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">1hr</strong>
+            <span class="py-1 text-desaturatedBlue">Yesterday - 2hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Weekly Text -->
+          <div class="card__text weekly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">10hrs</strong>
+            <span class="py-1 text-desaturatedBlue"> Last Week - 8hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Monthly Text -->
+          <div class="card__text monthly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">23hrs</strong>
+            <span class="py-1 text-desaturatedBlue">Last Month - 29hrs </span> <!-- daily -->
+          </div>
+        </div>
       </div>
 
-      <div class="exercise">
-        Exercise
-        1hr <!-- daily -->
-        Previous - 1hr <!-- daily -->
-        4hrs <!-- weekly -->
-        Previous - 5hrs <!-- weekly -->
-        11hrs <!-- monthly -->
-        Previous - 18hrs <!-- monthly -->
+      <!-- Study Card -->
+      <div class="card study bg-lightRedStudy pt-12 overflow-hidden rounded-xl">
+        <div class="bg-darkBlue rounded-xl p-6 flex flex-col hover:bg-darkBLueHover transition-colors duration-300">
+          <div class="flex items-center justify-between">
+            <strong class="text-xl font-medium">Study</strong>
+            <img class="cursor-pointer" src="images/icon-ellipsis.svg" alt="">
+          </div>
+
+          <!-- Daily Text -->
+          <div class="card__text daily flex justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">0hr</strong>
+            <span class="py-1 text-desaturatedBlue">Yesterday - 1hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Weekly Text -->
+          <div class="card__text weekly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">4hrs</strong>
+            <span class="py-1 text-desaturatedBlue"> Last Week - 7hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Monthly Text -->
+          <div class="card__text monthly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">13hrs</strong>
+            <span class="py-1 text-desaturatedBlue">Last Month - 19hrs </span> <!-- daily -->
+          </div>
+        </div>
       </div>
-      <div class="social">
-        Social
-        1hr <!-- daily -->
-        Previous - 3hrs <!-- daily -->
-        5hrs <!-- weekly -->
-        Previous - 10hrs <!-- weekly -->
-        21hrs <!-- monthly -->
-        Previous - 23hrs <!-- monthly -->
+
+      <!-- Exercise -->
+
+
+      <div class="card exercise bg-limeGreenExercise pt-12 overflow-hidden rounded-xl">
+        <div class="bg-darkBlue rounded-xl p-6 flex flex-col hover:bg-darkBLueHover transition-colors duration-300">
+          <div class="flex items-center justify-between">
+            <strong class="text-xl font-medium">Exercise</strong>
+            <img class="cursor-pointer" src="images/icon-ellipsis.svg" alt="">
+          </div>
+
+          <!-- Daily Text -->
+          <div class="card__text daily flex justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">1hr</strong>
+            <span class="py-1 text-desaturatedBlue">Yesterday - 2hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Weekly Text -->
+          <div class="card__text weekly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">10hrs</strong>
+            <span class="py-1 text-desaturatedBlue"> Last Week - 8hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Monthly Text -->
+          <div class="card__text monthly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">23hrs</strong>
+            <span class="py-1 text-desaturatedBlue">Last Month - 29hrs </span> <!-- daily -->
+          </div>
+        </div>
       </div>
-      <div class="self-care">
-        Self Care
-        0hrs <!-- daily -->
-        Previous - 1hr <!-- daily -->
-        2hrs <!-- weekly -->
-        Previous - 2hrs <!-- weekly -->
-        7hrs <!-- monthly -->
-        Previous - 11hrs <!-- monthly -->
+
+
+      <!-- Social -->
+
+
+      <div class="card social bg-violetSocial pt-12 overflow-hidden rounded-xl">
+        <div class="bg-darkBlue rounded-xl p-6 flex flex-col hover:bg-darkBLueHover transition-colors duration-300">
+          <div class="flex items-center justify-between">
+            <strong class="text-xl font-medium">Social</strong>
+            <img class="cursor-pointer" src="images/icon-ellipsis.svg" alt="">
+          </div>
+
+          <!-- Daily Text -->
+          <div class="card__text daily flex justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">1hr</strong>
+            <span class="py-1 text-desaturatedBlue">Yesterday - 3hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Weekly Text -->
+          <div class="card__text weekly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">5hrs</strong>
+            <span class="py-1 text-desaturatedBlue"> Last Week - 10hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Monthly Text -->
+          <div class="card__text monthly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">21hrs</strong>
+            <span class="py-1 text-desaturatedBlue">Last Month - 23hrs </span> <!-- daily -->
+          </div>
+        </div>
       </div>
+
+      <!-- Self care -->
+
+      <div class="card care bg-softOrangeSelfCare pt-12 overflow-hidden rounded-xl">
+        <div class="bg-darkBlue rounded-xl p-6 flex flex-col hover:bg-darkBLueHover transition-colors duration-300">
+          <div class="flex items-center justify-between">
+            <strong class="text-xl font-medium">Care</strong>
+            <img class="cursor-pointer" src="images/icon-ellipsis.svg" alt="">
+          </div>
+
+          <!-- Daily Text -->
+          <div class="card__text daily flex justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">0hr</strong>
+            <span class="py-1 text-desaturatedBlue">Yesterday - 1hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Weekly Text -->
+          <div class="card__text weekly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">2hrs</strong>
+            <span class="py-1 text-desaturatedBlue"> Last Week - 2hrs</span> <!-- daily -->
+          </div>
+
+          <!-- Monthly Text -->
+          <div class="card__text monthly hidden justify-between items-end mt-4 lg:flex-col lg:items-start">
+            <strong class="text-4xl font-normal">7hrs</strong>
+            <span class="py-1 text-desaturatedBlue">Last Month - 11hrs </span> <!-- daily -->
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </section>
-
+  <script src="js/index.js"></script>
 </body>
 
 </html>
