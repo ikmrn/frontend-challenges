@@ -12,30 +12,72 @@
 
 </head>
 
-<body class="sans">
-  <div class="bg-violetBlueBg">Your Result</div>
-  Your Result
-  76
-  of 100
+<body class="sans h-screen md:flex md:items-center md:justify-center">
+  <section class="flex flex-col md:flex-row bg-white md:drop-shadow-2xl md:rounded-3xl">
+    <div
+      class="flex flex-col text-white items-center p-6 bg-gradient-to-b from-lightBlueBg to-royalBlueBg rounded-b-3xl text-center md:rounded-t-3xl md:justify-between md:py-8 md:px-10">
+      <span class="text-lg">Your Result</span>
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
+      <!-- Circle -->
+      <div
+        class="flex flex-col items-center justify-center  bg-gradient-to-b from-violetBlueCircle to-persianBlueCircle p-6 m-3 rounded-full w-32 h-32 md:w-48 md:h-48 file:">
+        <h1 class="font-bold text-5xl">76</h1>
+        <span class="text-lightLavender">of 100</span>
+      </div>
 
-  Summary
+      <strong class="text-2xl mb-3">Great</strong>
+      <p class="max-w-72 md:max-w-56">You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
 
-  Reaction
-  80 / 100
+    <!-- Summary -->
+    <div class="p-6 flex flex-col justify-between md:min-w-80 md:rounded-r-3xl">
+      <h2 class="text-xl font-semibold">Summary</h2>
 
-  Memory
-  92 / 100
+      <div class="flex flex-col">
+        <!-- Reaction -->
+        <div class="bg-lightRedBg flex justify-between p-3 rounded-md my-2">
+          <div class="flex">
+            <img src="assets/images/icon-reaction.svg" alt="">
+            <span class="mx-2 font-bold  text-lightRed ">Reaction</span>
+          </div>
+          <div><span class="font-bold">80</span> / 100</div>
+        </div>
 
-  Verbal
-  61 / 100
+        <!-- Memory -->
+        <div class="bg-orangyYellowBg flex justify-between p-3 rounded-md my-2">
+          <div class="flex">
+            <img src="assets/images/icon-memory.svg" alt="">
+            <span class="mx-2 font-bold  text-orangyYellow ">Memory</span>
+          </div>
+          <div><span class="font-bold">92</span> / 100</div>
+        </div>
 
-  Visual
-  72 / 100
+        <!-- Verbal -->
+        <div class="bg-greenTealBg flex justify-between p-3 rounded-md my-2">
+          <div class="flex">
+            <img src="assets/images/icon-verbal.svg" alt="">
+            <span class="mx-2 font-bold  text-greenTeal ">Memory</span>
+          </div>
+          <div><span class="font-bold">61</span> / 100</div>
+        </div>
 
-  Continue
+        <!-- Visual -->
+        <div class="bg-cobaltBlueBg flex justify-between p-3 rounded-md my-2">
+          <div class="flex">
+            <img src="assets/images/icon-visual.svg" alt="">
+            <span class="mx-2 font-bold  text-cobaltBlue ">Memory</span>
+          </div>
+          <div><span class="font-bold">72</span> / 100</div>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <button
+        class="bg-grayBlue my-4 p-2 text-paleBlue font-bold rounded-full hover:bg-gradient-to-b from-lightBlueBg to-royalBlueBg">Continue</button>
+    </div>
+
+
+  </section>
 </body>
 
 </html>
