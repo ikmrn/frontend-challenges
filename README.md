@@ -32,8 +32,8 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/sunnyside-landing)
-- Live Site URL: [Live demo on Netlify](https://ikmrn-sunnyside-landing.netlify.app/)
+- Solution URL: [GitHub Repository](https://github.com/ikmrn/frontend-challenges/tree/time-tracking-dashboard)
+- Live Site URL: [Live demo on Netlify](https://ikmrn-time-tracking-dashboard.netlify.app/)
 
 ## My process
 
