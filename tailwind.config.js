@@ -3,10 +3,14 @@ module.exports = {
   content: ["./*html"],
   theme: {
     screens: {
-      sm: "480px",
+      sm: "640px",
       md: "768px",
       lg: "976px",
-      xl: "1400px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
+    fontFamily: {
+      sans: "Rubik, sans-serif",
     },
     extend: {
       colors: {
@@ -14,6 +18,7 @@ module.exports = {
         lightRedWork: "hsl(15, 100%, 70%)",
         softBLuePlay: "hsl(195, 74%, 62%)",
         darkBlue: "hsl(235, 46%, 20%)",
+        darkBLueHover: "hsl(236, 41%, 32%)",
         darkGrayishBlue: "hsl(227, 12%, 61%)",
         veryDarkBlue: "hsl(226, 43%, 10%)",
         desaturatedBlue: "hsl(235, 45%, 61%)",
