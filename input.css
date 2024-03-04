@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card {
+  background-repeat: no-repeat;
+  background-position: 95% -2%;
+}
+.work {
+  background-image: url("../images/icon-work.svg");
+}
+.play {
+  background-image: url("../images/icon-play.svg");
+}
+.study {
+  background-image: url("../images/icon-study.svg");
+}
+.exercise {
+  background-image: url("../images/icon-exercise.svg");
+}
+.social {
+  background-image: url("../images/icon-social.svg");
+}
+.care {
+  background-image: url("../images/icon-self-care.svg");
+}
