@@ -22,4 +22,7 @@ input:focus {
 }
 
 .error {
+  background-color: rgb(254 226 226);
+  color: salmon;
+  border: 1px solid salmon;
 }
