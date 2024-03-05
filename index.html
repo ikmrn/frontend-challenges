@@ -1,52 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title> Newsletter sign-up form with success message</title>
+  <link rel="stylesheet" href="css/main.css">
+
 </head>
-<body>
+
+<body class="h-screen">
 
   <!-- Sign-up form start -->
 
-  Stay updated!
+  <section id="sign-up-form" class="flex flex-col h-full md:flex-row">
+    <!-- Image -->
+    <picture>
+      <source media="(max-width: 375px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
+      <source media="(min-width: 376px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+      <img src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+    </picture>
 
-  Join 60,000+ product managers receiving monthly updates on:
+    <!-- Form -->
+    <div class="p-8 flex flex-col ">
+      <strong class="text-3xl text-darkGray tracking-wider ">Stay updated!</strong>
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+      <p class="font-normal my-3">
+        Join 60,000+ product managers receiving monthly updates on:
+      </p>
 
-  Email address
-  email@company.com
+      <ul class="flex flex-col my-3">
+        <li class="flex items-start my-2">
+          <img src="assets/images/icon-list.svg" alt="">
+          <p class="ml-2">Product discovery and building what matters</p>
+        </li>
+        <li class="flex items-start my-2">
+          <img src="assets/images/icon-list.svg" alt="">
+          <p class="ml-2">Measuring to ensure updates are a success</p>
+        </li>
+        <li class="flex items-start my-2">
+          <img src="assets/images/icon-list.svg" alt="">
+          <p class="ml-2">And much more!</p>
+        </li>
 
-  Subscribe to monthly newsletter
+      </ul>
+
+      <form class="flex flex-col my-4" id="newsletter-form">
+        <div class="flex justify-between">
+          <label class="text-darkGray">
+            Email address
+          </label>
+          <label id="email-error" class="text-tomato hidden">
+            Valid email required
+          </label>
+        </div>
+        <input type="email" id="email-input" placeholder="email@company.com"
+          class="mb-4 p-3 border rounded-lg border-gray">
+
+        <button type="submit" class="p-4 font-bold rounded-lg bg-darkGray text-white">
+          Subscribe to monthly newsletter
+        </button>
+      </form>
+
+    </div>
+  </section>
 
   <!-- Sign-up form end -->
 
   <!-- Success message start -->
+  <section id="success-message" class="hidden">
+    Thanks for subscribing!
 
-  Thanks for subscribing!
+    A confirmation email has been sent to ash@loremcompany.com.
+    Please open it and click the button inside to confirm your subscription.
 
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
+    Dismiss message
+  </section>
 
   <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="js/index.js"></script>
 </body>
+
 </html>
