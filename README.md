@@ -30,7 +30,7 @@ This is a solution to the [Newsletter sign-up form with success message challeng
 
 ### Screenshot
 
-![screenshot](images/screenshot.png)
+![screenshot](assets/images/screenshot.png)
 
 ### Links
 
@@ -42,20 +42,15 @@ This is a solution to the [Newsletter sign-up form with success message challeng
 ### Built with
 
 - Flexbox
-- Grid
 - Tailwind
 
 ### What I learned
 
-My recent foray into Tailwind CSS has been truly enlightening. I found myself drawn to its simplicity and user-friendly nature. However, my inaugural Tailwind project proved to be more time-consuming than I initially anticipated. Despite this challenge, I was captivated by its intuitive functionality.
-
-One aspect of Tailwind that particularly stood out to me was its approach to styling. While incredibly efficient, the abundance of classes within the HTML structure initially felt overwhelming. Admittedly, the sheer volume of classes can appear excessive. However, the minimal need for custom class naming was a significant advantage, simplifying the development process considerably.
-
-In summary, while there were moments of difficulty, my overall experience with Tailwind CSS was positive. Its combination of simplicity and efficiency offers a promising path for future projects.
+In this project, I gained a deeper understanding of how Tailwind CSS operates and encountered challenges associated with dynamically adding classes, which are not compiled during build time.
 
 ### Continued development
 
-Moving forward, I am eager to delve deeper into the learning Tailwind CSS. The initial encounter with this framework has ignited a desire within me to expand my knowledge and skills in its usage. I am motivated to uncover more of its intricacies, explore advanced features, and master efficient workflows.
+Moving forward, I aim to delve into the intricacies of compiling Tailwind CSS in real time. If there an opportunity for dynamic style generation I will certainly try Just-in-Time mode
 
 ## Author
 
