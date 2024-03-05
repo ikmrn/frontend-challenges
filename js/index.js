@@ -43,7 +43,13 @@ function dismissSuccessMessage() {
   signUpSection.classList.remove("hidden");
   signUpSection.classList.add("flex");
 }
+// Function to handle changes in email input
+function handleEmailInputChange() {
+  emailInput.classList.remove("error");
+  emailError.classList.add("hidden");
+}
 
 // Add event listeners
 newsletterForm.addEventListener("submit", handleFormSubmission);
 dismiss.addEventListener("click", dismissSuccessMessage);
+emailInput.addEventListener("input", handleEmailInputChange);
