@@ -13,23 +13,24 @@
 
 </head>
 
-<body class="h-screen">
+<body class="h-screen md:flex md:items-center md:justify-center md:bg-grayCustom md:p-4">
 
   <!-- Sign-up form start -->
 
-  <section id="sign-up-form" class="flex flex-col h-full md:flex-row">
+  <section id="sign-up-form"
+    class="flex flex-col h-full md:flex-row md:h-auto md:bg-white md:rounded-5xl md:p-8 md:items-center md:drop-shadow-2xl">
     <!-- Image -->
     <picture>
-      <source media="(max-width: 375px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
-      <source media="(min-width: 376px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
-      <img src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+      <source media="(max-width: 768px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
+      <source media="(min-width: 769px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+      <img src="./assets/images/illustration-sign-mdup-desktop.svg" class="w-full" alt="">
     </picture>
 
-    <!-- Form -->
-    <div class="p-8 flex flex-col ">
-      <strong class="text-3xl text-darkGray tracking-wider ">Stay updated!</strong>
+    <!-- Form -->`
+    <div class="p-8 flex flex-col md:-order-1">
+      <h1 class="text-3xl text-darkGray tracking-wider md:text-4xl">Stay updated!</h1>
 
-      <p class="font-normal my-3">
+      <p class="font-normal my-3 md:my-6">
         Join 60,000+ product managers receiving monthly updates on:
       </p>
 
@@ -59,9 +60,11 @@
           </label>
         </div>
         <input type="email" id="email-input" placeholder="email@company.com"
-          class="mb-4 p-3 border rounded-lg border-gray">
+          class="mb-4 p-3 border rounded-lg border-grayCustom md:mb-6">
 
-        <button type="submit" class="p-4 font-bold rounded-lg bg-darkGray text-white">
+        <button type="submit"
+          class="p-4 font-bold rounded-lg bg-darkGray text-white hover:bg-gradient-to-r from-tomato to-orange-500">
+
           Subscribe to monthly newsletter
         </button>
       </form>
@@ -72,17 +75,23 @@
   <!-- Sign-up form end -->
 
   <!-- Success message start -->
-  <section id="success-message" class="hidden">
-    Thanks for subscribing!
-
-    A confirmation email has been sent to ash@loremcompany.com.
-    Please open it and click the button inside to confirm your subscription.
-
-    Dismiss message
+  <section id="success-message"
+    class="hidden h-full p-14 flex-col pt-48 justify-between md:bg-white md:pt-14 md:max-w-[500px] md:max-h-[500px] md:rounded-5xl md:drop-shadow-2xl">
+    <div class="flex flex-col items-start">
+      <img src="assets/images/icon-success.svg" alt="">
+      <h1 class="text-5xl text-darkGray my-8">Thanks for subscribing!</h1>
+      <p class="text-grayCustom ">
+        A confirmation email has been sent to
+        <strong class="text-darkGray" id="user-email"></strong>
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+    </div>
+    <button id="dismiss"
+      class="p-4 font-bold rounded-lg bg-darkGray text-white hover:bg-gradient-to-r from-tomato to-orange-500"">Dismiss message</button>
   </section>
 
   <!-- Success message end -->
-  <script src="js/index.js"></script>
+  <script src=" js/index.js"></script>
 </body>
 
 </html>
