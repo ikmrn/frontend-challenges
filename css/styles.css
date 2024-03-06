@@ -52,7 +52,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   font-family: var(--ff);
   font-weight: var(--fw-bold);
   font-weight: var(--fw-bold);
