@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const filterOptions = document.querySelector(".filter__options");
 const filterCategories = ["role", "level", "languages", "tools"];
 const filterValues = {};
 let data;
@@ -10,8 +11,8 @@ async function main() {
   } catch (error) {
     console.error(error.message);
   }
-
   generateCards();
+  addMarginToFirstCard();
 }
 
 async function fetchData() {
@@ -42,6 +43,7 @@ function generateCards() {
     const cardHTML = createCard(jobListing);
     container.appendChild(cardHTML);
   });
+  addMarginToFirstCard();
 }
 
 function createCard(jobListing) {
@@ -70,19 +72,23 @@ function createCard(jobListing) {
   // Create HTML string for the card
   const cardHTML = `
     <div class="card ${isFeaturedClass}">
-    <img src="${jobListing.logo}" alt="${jobListing.company}" class="card__logo"/>
-    <div class="card__header">
-      <h2 class="card__company">${jobListing.company}</h2>${isNew}${isFeatured}
-    </div>
-    <p class="card__position">${jobListing.position}</p>
-    <ul class="card__info">
-      <li class="card__posted">${jobListing.postedAt}</li>
-      <li class="card__contract">${jobListing.contract}</li>
-      <li class="card__location">${jobListing.location}</li>
-    </ul>
-    <div class="card__filter-options">
-      ${optionsHTML}
-    </div>
+      <div class="card__description">
+        <img src="${jobListing.logo}" alt="${jobListing.company}" class="card__logo"/>
+        <div class="card__description-container">
+          <div class="card__header">
+            <h2 class="card__company">${jobListing.company}</h2>${isNew}${isFeatured}
+          </div>
+          <p class="card__position">${jobListing.position}</p>
+          <ul class="card__info">
+            <li class="card__posted">${jobListing.postedAt}</li>
+            <li class="card__contract">${jobListing.contract}</li>
+            <li class="card__location">${jobListing.location}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card__filter-options">
+        ${optionsHTML}
+      </div>
   </div>`;
 
   // Convert cardHTML string to DOM elements
@@ -92,12 +98,14 @@ function createCard(jobListing) {
 
   // Add event listeners to individual elements
   filterCategories.forEach((filterCategory) => {
-    cardFragment.querySelectorAll(`.card__tag[data-key="${filterCategory}"]`).forEach((tag) => {
-      tag.addEventListener("click", () => {
-        addFilterTag(tag, filterCategory);
-        generateCards();
+    cardFragment
+      .querySelectorAll(`.card__tag[data-key="${filterCategory}"]`)
+      .forEach((tag) => {
+        tag.addEventListener("click", () => {
+          addFilterTag(tag, filterCategory);
+          generateCards();
+        });
       });
-    });
   });
   // Return the DocumentFragment containing the card
   return cardFragment;
@@ -144,28 +152,41 @@ function applyFilter(data) {
 }
 
 function updateFilterTab() {
-  let filterHTML = "";
+  let filterHTML = `<div class='filter'><div class="filter__options">`;
   Object.entries(filterValues).forEach(([key, values]) => {
     values.forEach((value) => {
       filterHTML += `
-      <span class="card filter__element" data-key=${key}>${value}</span>
-      <img src="images/icon-remove.svg" alt="" />
+      <div class="filter__element" data-key=${key}>
+        <button class="filter__tag">${value}</button>
+        <img src="images/icon-remove.svg" class="filter__close" alt="" />
+      </div>
       `;
     });
   });
+  filterHTML += `</div><button class="filter__clear">Clear</button></div>`;
 
   const filterFragment = document
     .createRange()
     .createContextualFragment(filterHTML);
 
-  const filterElements = filterFragment.querySelectorAll(".filter__element");
+  const filterTags = filterFragment.querySelectorAll(".filter__element");
+  const filterClear = filterFragment.querySelector(".filter__clear");
 
-  filterElements.forEach((element) => {
-    element.addEventListener("click", () => {
-      const keyValue = element.getAttribute("data-key");
+  /* Event Listeners */
+  filterClear.addEventListener("click", () => {
+    for (const key in filterValues) {
+      delete filterValues[key];
+    }
+    generateCards();
+  });
+
+  filterTags.forEach((filterTag) => {
+    filterTag.addEventListener("click", (event) => {
+      const keyValue = filterTag.getAttribute("data-key");
+      const valueToRemove = filterTag.querySelector("span").textContent;
 
       if (Array.isArray(filterValues[keyValue])) {
-        const indexToRemove = filterValues[keyValue].indexOf(element.innerHTML);
+        const indexToRemove = filterValues[keyValue].indexOf(valueToRemove);
         if (indexToRemove !== -1) {
           filterValues[keyValue].splice(indexToRemove, 1);
         }
