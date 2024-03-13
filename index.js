@@ -206,4 +206,16 @@ function updateFilterTab() {
   return filterFragment;
 }
 
+// Function to add class with margin to first card
+function addMarginToFirstCard() {
+  const firstCard = document.querySelector(".card");
+  const filterContainer = document.querySelector(".filter");
+
+  if (!filterContainer) {
+    firstCard.classList.add("card__margin-top");
+  } else {
+    firstCard.classList.remove("card__margin-top");
+  }
+}
+
 main();
