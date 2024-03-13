@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 const options = ["role", "level", "languages", "tools"];
-const filterOptions = {};
+const filterValues = {};
 let data;
 
 async function main() {
@@ -30,10 +30,10 @@ function generateCards() {
   let filteredData;
 
   // Check if the filter object is empty
-  if (Object.keys(filterOptions).length !== 0) {
+  if (Object.keys(filterValues).length !== 0) {
     filteredData = applyFilter(data);
 
-    // container.appendChild(createFilterTab(filterOptions));
+    container.appendChild(updateFilterTab());
   } else {
     filteredData = data;
   }
@@ -68,14 +68,16 @@ function createCard(element) {
   const cardHTML = `
     <div class="card ${isFeaturedClass}">
     <img src="${element.logo}" alt="${element.company}" class="card__logo"/>
-    <div>
+    <div class="card__header">
       <h2 class="card__company">${element.company}</h2>${isNew}${isFeatured}
     </div>
-    <p>${element.position}</p>
-    <div>
-      <span class="card__posted">${element.postedAt}</span><span class="card__contract">${element.contract}</span><span class="card__location">${element.location}</span>
-    </div>
-    <div>
+    <p class="card__position">${element.position}</p>
+    <ul class="card__info">
+      <li class="card__posted">${element.postedAt}</li>
+      <li class="card__contract">${element.contract}</li>
+      <li class="card__location">${element.location}</li>
+    </ul>
+    <div class="card__filter-options">
       ${optionsHTML}
     </div>
   </div>`;
@@ -99,13 +101,13 @@ function createCard(element) {
 }
 
 function addFilterTag(tag, property) {
-  if (filterOptions[property] === undefined) {
+  if (filterValues[property] === undefined) {
     // Check if the property doesn't exist in filter
-    filterOptions[property] = []; // Initialize the  property as an empty array
+    filterValues[property] = []; // Initialize the  property as an empty array
   }
 
-  if (!filterOptions[property].includes(tag.textContent)) {
-    filterOptions[property].push(tag.textContent);
+  if (!filterValues[property].includes(tag.textContent)) {
+    filterValues[property].push(tag.textContent);
   }
 }
 
@@ -113,11 +115,11 @@ function applyFilter(data) {
   return data.filter((item) => {
     let filterMatches = 0;
 
-    for (const property in filterOptions) {
+    for (const property in filterValues) {
       if (Array.isArray(item[property])) {
         // Check if all elements in the filterOptions[property] array are included in the item[property] array
         if (
-          filterOptions[property].every((option) =>
+          filterValues[property].every((option) =>
             item[property].includes(option)
           )
         ) {
@@ -127,19 +129,57 @@ function applyFilter(data) {
         // For non-array properties, simply check if the values match
         if (
           !item[property] ||
-          filterOptions[property].includes(item[property])
+          filterValues[property].includes(item[property])
         ) {
           filterMatches++;
         }
       }
     }
 
-    return filterMatches === Object.keys(filterOptions).length;
+    return filterMatches === Object.keys(filterValues).length;
   });
 }
 
-function createFilterTab(filterElements) {
-  
+function updateFilterTab() {
+  let filterHTML = "";
+  Object.entries(filterValues).forEach(([key, values]) => {
+    values.forEach((value) => {
+      filterHTML += `
+      <span class="card filter__element" data-key=${key}>${value}</span>
+      <img src="images/icon-remove.svg" alt="" />
+      `;
+    });
+  });
+
+  const filterFragment = document
+    .createRange()
+    .createContextualFragment(filterHTML);
+
+  const filterElements = filterFragment.querySelectorAll(".filter__element");
+
+  filterElements.forEach((element) => {
+    element.addEventListener("click", () => {
+      const keyValue = element.getAttribute("data-key");
+
+      if (Array.isArray(filterValues[keyValue])) {
+        const indexToRemove = filterValues[keyValue].indexOf(element.innerHTML);
+        if (indexToRemove !== -1) {
+          filterValues[keyValue].splice(indexToRemove, 1);
+        }
+        // Check if the array is empty after removal and delete the property if so
+        if (filterValues[keyValue].length === 0) {
+          delete filterValues[keyValue];
+        }
+      } else {
+        // For single values
+        // Remove the property from the filterValues object
+        delete filterValues[keyValue];
+      }
+      generateCards();
+    });
+  });
+
+  return filterFragment;
 }
 
 main();
