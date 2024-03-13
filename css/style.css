@@ -1,0 +1,35 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  height: 100%;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --dark-cyan: hsl(180, 29%, 50%);
+  --background: hsl(180, 52%, 96%);
+  --light-cyan-filter: hsl(180, 31%, 95%);
+  --dark-greyish-cyan: hsl(180, 8%, 52%);
+  --dark-greyish-cyan-shadow: hsl(180, 8%, 52%);
+  --very-dark-cyan: hsl(180, 14%, 20%);
+  --cyan-shadow: hsla(180, 36%, 53%, 0.452);
+
+  /* Font weights */
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* Sizes */
+  --border-radius: 10px;
+}
