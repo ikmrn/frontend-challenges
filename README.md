@@ -40,23 +40,18 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Grid
 - Mobile-first workflow
 - JavaScript for interactivity
 - Responsive design for mobile and desktop devices
 
 ### What I learned
 
-During this project, I gained valuable experience in state management by implementing state changes for different components. Specifically, I learned how to create a rating component from scratch, which involved handling user interactions to select a rating option and dynamically updating the UI based on the user's choice.
-
-I deepened my understanding of web forms by learning how to prevent form submission when certain conditions are not met. This knowledge is crucial for ensuring data integrity and providing a smooth user experience.
-
-Additionally, I delved into dynamically generating HTML elements with JavaScript, improving code efficiency and maintainability while adhering to standardized practices.
-
-Overall, this project provided me with practical hands-on experience in front-end development, reinforcing key concepts such as state management and form handling.
+During this project, I learned how to create filters to organize and manage data effectively. Additionally, I practiced building dynamic HTML elements to create more interactive web pages. Importing data from JSON files taught me how to integrate external data sources seamlessly into my projects. Overall, these experiences have expanded my understanding of web development and equipped me with valuable skills for future projects.
 
 ### Continued development
 
-In future projects, I aim to further enhance my understanding of web development practices, particularly in areas related to security. I am eager to explore topics such as secure coding practices, data validation, and protecting against common security threats. Additionally, I plan to continue refining my skills in front-end development and exploring advanced techniques to create more robust and user-friendly web applications.
+Now, I want to add more to it. I'm thinking of incorporating advanced features like sorting and searching to make it easier to browse data. I also want to try using new tools like React or Vue.js to make my website more interactive. It would be great to include real-time updates from other websites using APIs and make my data look better with charts and graphs.
 
 ## Author
 
