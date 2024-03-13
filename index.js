@@ -183,8 +183,9 @@ function updateFilterTab() {
   filterTags.forEach((filterTag) => {
     filterTag.addEventListener("click", (event) => {
       const keyValue = filterTag.getAttribute("data-key");
-      const valueToRemove = filterTag.querySelector("span").textContent;
+      const valueToRemove = filterTag.querySelector("button").textContent;
 
+      console.log(keyValue, valueToRemove)
       if (Array.isArray(filterValues[keyValue])) {
         const indexToRemove = filterValues[keyValue].indexOf(valueToRemove);
         if (indexToRemove !== -1) {
