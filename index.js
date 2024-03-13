@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
-const options = ["role", "level", "languages", "tools"];
+const filterCategories = ["role", "level", "languages", "tools"];
 const filterValues = {};
 let data;
 
@@ -38,28 +38,31 @@ function generateCards() {
     filteredData = data;
   }
 
-  filteredData.forEach((element) => {
-    const cardHTML = createCard(element);
+  filteredData.forEach((jobListing) => {
+    const cardHTML = createCard(jobListing);
     container.appendChild(cardHTML);
   });
 }
 
-function createCard(element) {
-  const isNew = element.new ? '<span class="card__new">New!</span>' : "";
-  const isFeatured = element.featured
+function createCard(jobListing) {
+  const isNew = jobListing.new ? '<span class="card__new">New!</span>' : "";
+  const isFeatured = jobListing.featured
     ? '<span class="card__feat">Featured</span>'
     : "";
 
-  const isFeaturedClass = element.featured ? "card--featured-cyan" : "";
+  const isFeaturedClass = jobListing.featured ? "card--featured-cyan" : "";
 
-  const optionsHTML = options
-    .map((option) => {
-      if (Array.isArray(element[option])) {
-        return element[option]
-          .map((item) => `<span class="card__${option} tag">${item}</span>`)
+  const optionsHTML = filterCategories
+    .map((filterCategory) => {
+      if (Array.isArray(jobListing[filterCategory])) {
+        return jobListing[filterCategory]
+          .map(
+            (item) =>
+              `<span class="card__tag" data-key="${filterCategory}" >${item}</span>`
+          )
           .join("");
       } else {
-        return `<span class="card__${option} tag">${element[option]}</span>`;
+        return `<span class="card__tag" data-key="${filterCategory}">${jobListing[filterCategory]}</span>`;
       }
     })
     .join("");
@@ -67,15 +70,15 @@ function createCard(element) {
   // Create HTML string for the card
   const cardHTML = `
     <div class="card ${isFeaturedClass}">
-    <img src="${element.logo}" alt="${element.company}" class="card__logo"/>
+    <img src="${jobListing.logo}" alt="${jobListing.company}" class="card__logo"/>
     <div class="card__header">
-      <h2 class="card__company">${element.company}</h2>${isNew}${isFeatured}
+      <h2 class="card__company">${jobListing.company}</h2>${isNew}${isFeatured}
     </div>
-    <p class="card__position">${element.position}</p>
+    <p class="card__position">${jobListing.position}</p>
     <ul class="card__info">
-      <li class="card__posted">${element.postedAt}</li>
-      <li class="card__contract">${element.contract}</li>
-      <li class="card__location">${element.location}</li>
+      <li class="card__posted">${jobListing.postedAt}</li>
+      <li class="card__contract">${jobListing.contract}</li>
+      <li class="card__location">${jobListing.location}</li>
     </ul>
     <div class="card__filter-options">
       ${optionsHTML}
@@ -88,10 +91,10 @@ function createCard(element) {
     .createContextualFragment(cardHTML);
 
   // Add event listeners to individual elements
-  options.forEach((option) => {
-    cardFragment.querySelectorAll(`.card__${option}`).forEach((tag) => {
+  filterCategories.forEach((filterCategory) => {
+    cardFragment.querySelectorAll(`.card__tag[data-key="${filterCategory}"]`).forEach((tag) => {
       tag.addEventListener("click", () => {
-        addFilterTag(tag, option);
+        addFilterTag(tag, filterCategory);
         generateCards();
       });
     });
@@ -119,8 +122,8 @@ function applyFilter(data) {
       if (Array.isArray(item[property])) {
         // Check if all elements in the filterOptions[property] array are included in the item[property] array
         if (
-          filterValues[property].every((option) =>
-            item[property].includes(option)
+          filterValues[property].every((filterValue) =>
+            item[property].includes(filterValue)
           )
         ) {
           filterMatches++;
